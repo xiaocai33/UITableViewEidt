@@ -13,6 +13,25 @@
 - (void)viewDidLoad{
     [super viewDidLoad];
     self.tableView.backgroundColor = [UIColor grayColor];
+    
+//    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"5"]];
+//    //  创建需要的毛玻璃特效类型
+//    /**
+//     *  UIBlurEffectStyleExtraLight,
+//     *  UIBlurEffectStyleLight,
+//     *  UIBlurEffectStyleDark
+//     */
+//    UIBlurEffect *blur = [UIBlurEffect effectWithStyle:UIBlurEffectStyleExtraLight];
+//    
+//    //添加到要有毛玻璃特效的控件中
+//    UIVisualEffectView *visual = [[UIVisualEffectView alloc] initWithEffect:blur];
+//    visual.frame = imageView.bounds;
+//    
+//    [imageView addSubview:visual];
+//    
+//    //设置模糊透明度
+//    visual.alpha = 0.8;
+//    [self.tableView addSubview:imageView];
 }
 
 #pragma mark - UITableViewDataSource 数据源方法
@@ -22,9 +41,9 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     if (section == 0) {
-        return 15;
+        return 5;
     } else if (section == 1){
-        return 10;
+        return 5;
     } else{
         return 5;
     }
@@ -34,7 +53,7 @@
     static NSString *ID = @"XCCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:ID];
     }
     cell.textLabel.text = [NSString stringWithFormat:@"第%zd组 第%zd行", indexPath.section, indexPath.row];
     
